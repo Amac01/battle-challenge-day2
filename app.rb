@@ -1,11 +1,11 @@
 require 'sinatra/base'
 
 class Battle < Sinatra::Base
-  DEFAULT_HPs = 60
-enable :sessions
-# client makes get request to the server
-# and the form is rendered
 
+  enable :sessions
+
+  # client makes get request to the server
+  # and the form is rendered
   get '/' do
     erb :index
   end
@@ -38,7 +38,6 @@ enable :sessions
   get '/play' do
     @player_1_name = session[:player_1_name]
     @player_2_name = session[:player_2_name]
-    @player_2_hps = DEFAULT_HPs
     erb :play
   end
 
